@@ -4,5 +4,5 @@ Nama : Angga Cahya Abadi <br>
 NIM : 10119123 <br>
 Kelas : IF-3
 
-<img allign="center" src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" width="700">
+<img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" height="700">
 
