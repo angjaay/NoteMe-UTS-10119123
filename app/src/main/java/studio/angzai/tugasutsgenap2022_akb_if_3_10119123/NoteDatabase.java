@@ -93,7 +93,7 @@ public class NoteDatabase extends SQLiteOpenHelper {
         List<Note> allNotes = new ArrayList<>();
         //select * from database
 
-        String query = "SELECT * FROM "+ DATABASE_TABLE;
+        String query = "SELECT * FROM "+ DATABASE_TABLE + " ORDER BY "+ KEY_ID+ " DESC";
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()){
             do {

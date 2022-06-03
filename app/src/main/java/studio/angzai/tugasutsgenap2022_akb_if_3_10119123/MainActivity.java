@@ -3,6 +3,7 @@ package studio.angzai.tugasutsgenap2022_akb_if_3_10119123;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
@@ -20,11 +21,12 @@ public class MainActivity extends AppCompatActivity {
     AnimatedBottomBar animatedBottomBar;
     FragmentManager fragmentManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         animatedBottomBar = findViewById(R.id.animatedBottomBar);
 
         if (savedInstanceState==null){
