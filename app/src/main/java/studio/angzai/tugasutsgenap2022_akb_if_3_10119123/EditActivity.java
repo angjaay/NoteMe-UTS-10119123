@@ -1,5 +1,4 @@
 package studio.angzai.tugasutsgenap2022_akb_if_3_10119123;
-
 //Nama : ANGGA CAHYA ABADI
 //NIM : 10119123
 //Kelas : IF-3
@@ -7,7 +6,6 @@ package studio.angzai.tugasutsgenap2022_akb_if_3_10119123;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,8 +26,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class AddNoteActivity extends AppCompatActivity {
-
+public class EditActivity extends AppCompatActivity {
     Toolbar toolbar;
     EditText noteTitle, noteDetail;
     Spinner spinner;
@@ -38,18 +35,32 @@ public class AddNoteActivity extends AppCompatActivity {
     String bulan;
     String todaysDate;
     String currentTime;
+    NoteDatabase db;
+    Note note;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_note);
+        setContentView(R.layout.activity_edit);
+
+        Intent i = getIntent();
+        Long id = i.getLongExtra("ID",0);
+        db = new NoteDatabase(this);
+        note = db.getNote(id);
+
+
+
         toolbar = findViewById(R.id.toolbar);
         hari = findViewById(R.id.hari);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        getSupportActionBar().setTitle(note.getTitle());
         noteTitle = findViewById(R.id.noteTitle);
         noteDetail = findViewById(R.id.noteDetail);
+
+        noteTitle.setText(note.getTitle());
+        noteDetail.setText(note.getContent());
+
 
         noteTitle.addTextChangedListener(new TextWatcher() {
             @Override
@@ -126,10 +137,8 @@ public class AddNoteActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView <?> parent) {
             }
         });
+
     }
-
-
-
     private String pad(int i) {
         if (i < 10){
             return "0"+i;
@@ -148,11 +157,14 @@ public class AddNoteActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.save){
-            Note note = new Note(noteTitle.getText().toString(),noteDetail.getText().toString() , spinner.getSelectedItem().toString(), todaysDate,currentTime);
-            NoteDatabase db = new NoteDatabase(this);
-            db.addNote(note);
-            goToMain();
-            Toast.makeText(this, "Tersimpan", Toast.LENGTH_SHORT).show();
+            note.setTitle(noteTitle.getText().toString());
+            note.setContent(noteDetail.getText().toString());
+            int id = db.editNote(note);
+                Toast.makeText(this, "Catatan Dirubah", Toast.LENGTH_SHORT).show();
+
+            Intent i = new Intent(getApplicationContext(), DetailsActivity.class);
+            i.putExtra("ID",note.getID());
+            startActivity(i);
         }
         if (item.getItemId() == R.id.delete){
             Toast.makeText(this, "Catatan Tidak Disimpan.", Toast.LENGTH_SHORT).show();

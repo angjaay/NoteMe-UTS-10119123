@@ -1,4 +1,7 @@
 package studio.angzai.tugasutsgenap2022_akb_if_3_10119123;
+//Nama : ANGGA CAHYA ABADI
+//NIM : 10119123
+//Kelas : IF-3
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -8,9 +11,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-//Nama : ANGGA CAHYA ABADI
-//NIM : 10119123
-//Kelas : IF-3
 
 public class Slider extends AppCompatActivity {
     ViewPager viewPager;

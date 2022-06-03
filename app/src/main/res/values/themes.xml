@@ -14,4 +14,12 @@
         <!-- Customize your theme here. -->
         <item name="colorControlNormal">@color/white</item>
     </style>
+    <style name="Theme.TugasUTSGenap2022_AKB_IF3_10119123.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.TugasUTSGenap2022_AKB_IF3_10119123.AppBarOverlay"
+        parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.TugasUTSGenap2022_AKB_IF3_10119123.PopupOverlay"
+        parent="ThemeOverlay.AppCompat.Light" />
 </resources>
