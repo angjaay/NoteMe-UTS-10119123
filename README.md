@@ -7,8 +7,8 @@ Kelas : IF-3
 <p align="center"><img  src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" height="700"></p>
 <br>
 
-<img src="image/1.jpeg" height="500">
-<img src="image/2.jpeg" height="500">
-<img src="image/3.jpeg" height="500">
+<img align="left" src="image/1.jpeg" height="500">
+<img align="left" src="image/2.jpeg" height="500">
+<img align="left" src="image/3.jpeg" height="500">
 
 
