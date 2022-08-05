@@ -11,7 +11,8 @@ Kelas : IF-3
 <img align="left" src="image/2.jpeg" height="500">
 <img align="left" src="image/3.jpeg" height="500">
 <img align="left" src="image/4.jpeg" height="500">
-
+<br>
+<br>
 <br>
 <img align="left" src="image/5.jpeg" height="500">
 <img align="left" src="image/6.jpeg" height="500">
